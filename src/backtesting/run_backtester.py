@@ -1,7 +1,9 @@
 import sys
 import os
-# Adjust the path if necessary so that Python can find your src directory
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# Ensure the 'src' directory is included in the Python path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(current_dir, '..', '..'))
+sys.path.insert(0, project_root)
 
 from src.backtesting.backtester import Backtester
 from src.backtesting.strategies.momentumstrategy import MomentumStrategy
@@ -22,5 +24,4 @@ if __name__ == "__main__":
 
     # Run the backtest
     backtester.run()
-    backtester.print_performance()  # Compute final stats and print them
 
