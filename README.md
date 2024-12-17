@@ -80,13 +80,31 @@ poetry install --sync
 ```
 Windows Systems
 ```sh
-python3.10 -m venv .venv3.10
-.\.venv3.10\Scripts\activate
-poetry install --sync
+poetry install
+poetry shell
+poetry show
+
 ```
+Incase Poetry didnt work for you, use this method
+
+Install all dependencies using:
+
+```sh
+pip install -r requirements.txt
+```
+---
+## 📥 Importing Data  
+
+To fetch **1-minute interval historical data for the last two weeks** using `yfinance`, execute the following script:
+
+```sh
+python scripts/yfinance_two_weeks_1min_intervals_data.py
+```
+This script will:
+- Fetch the data from `yfinance` for the specified asset.
+
 
 ---
-
 ## 🚀 Running the Backtester  
 
 Run the backtester by executing:
@@ -132,7 +150,14 @@ Final Portfolio Value: 103500.00
 ---
 ## 🧪 Running the Tests
 
-Run all unit tests in the `tests/` directory using `pytest` or `poetry run pytest`:
+Run all unit tests in the `tests/` directory using:
+```sh
+pytest
+```
+ or
+ ```sh
+ poetry run pytest
+```
 
 ## 📈 Example Output
 
